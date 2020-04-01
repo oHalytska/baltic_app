@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
     <title>Baltic App</title>
   </head>
   <body>
@@ -13,8 +14,21 @@
         <option value="lithuania">Lithuania</option>
       </select>
       <input type="submit" value="Choose country" />
-      <h1>Capital: <%= country.capital %></h1>
-      <span>Top Level Domain: <%= country.topLevelDomain %> </span>
+      <div class="main-info">
+        <h3>Country: <%= country.name %></h3>
+        <h3>Capital: <%= country.capital %></h3>
+      </div>
+      <ul>
+        <li>
+          Top Level Domain: <%= country.topLevelDomain %>
+        </li>
+        <li>Calling Code: <%= country.callingCodes %></li>
+        <li>Region: <%= country.region%></li>
+        <li>Subregion: <%= country.subregion %></li>
+        <li>Population: <%= country.population %></li>
+        <li>Timezone: <%= country.timezones %></li>
+        <li><img src="<%= country.flag %>" alt="" /></li>
+      </ul>
     </form>
   </body>
 </html>

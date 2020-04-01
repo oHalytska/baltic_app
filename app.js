@@ -23,9 +23,9 @@ app.post('/', function(req, res) {
   axios
     .get(url)
     .then(function(response) {
-      console.log(response.data);
       const country = response.data[0];
-      console.log(country);
+      console.log(country.languages[0].nativeName);
+      console.log(country.currencies[0].code);
       res.render('index', { country });
     })
     .catch(function(error) {
