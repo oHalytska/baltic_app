@@ -5,10 +5,105 @@
 }
 
 body {
-  color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: 'Merriweather Sans', sans-serif;
+  color: rgb(7, 21, 99);
 }
 
 img {
-  width: 10px;
-  height: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 280px;
+  height: 150px;
+  border-radius: 3px;
+  background-origin: padding-box;
+  box-shadow: 0px 5px 30px rgba(5, 5, 34, 0.1);
+}
+
+.selection {
+  margin-top: 100px;
+}
+.dropdown__list select {
+  font-size: 16px;
+  flex: 1;
+  padding: 0.5;
+  cursor: pointer;
+  background-color: rgb(225, 241, 255);
+  border: none;
+  border-radius: 2px;
+  color: rgb(8, 34, 121);
+  padding: 10px;
+  width: 250px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.dropdown__list {
+  position: relative;
+  display: flex;
+  width: 300px;
+  height: 50px;
+  overflow: hidden;
+}
+
+select {
+  flex: 1;
+  padding: 0.5;
+  cursor: pointer;
+  background-color: rgb(225, 241, 255);
+}
+
+.dropdown__list::after {
+  content: '\25BC';
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  padding: 1.2em 1.2em;
+  color: rgb(13, 25, 65);
+  background-color: rgb(182, 221, 255);
+  transition: 25s all ease;
+}
+
+.dropdown__list:hover::after {
+  margin-top: 30px;
+  color: rgb(225, 241, 255);
+}
+
+.btn {
+  margin-top: 20px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: aliceblue;
+  background-color: rgb(70, 204, 130);
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ul__main {
+  padding: 10px 0;
+  list-style: none;
+}
+
+.list__items ul {
+}
+
+.main-info {
+  color: rgb(6, 161, 141);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }

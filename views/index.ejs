@@ -3,22 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Baltic App</title>
   </head>
   <body>
-    <form method="post" action="">
-      <select name="countries" id="countries">
-        <option value="estonia">Estonia</option>
-        <option value="latvia">Latvia</option>
-        <option value="lithuania">Lithuania</option>
-      </select>
-      <input type="submit" value="Choose country" />
-      <div class="main-info">
-        <h3>Country: <%= country.name %></h3>
-        <h3>Capital: <%= country.capital %></h3>
-      </div>
-      <ul>
+    <div class="selection">
+      <form method="post" action="">
+        <div class="dropdown__list">
+          <select name="countries" id="countries">
+            <option selected disabled>Select country</option>
+            <option value="estonia">Estonia</option>
+            <option value="latvia">Latvia</option>
+            <option value="lithuania">Lithuania</option>
+          </select>
+        </div>
+        <input class="btn" type="submit" value="Choose country" />
+      </form>
+    </div>
+    <img src="<%= country.flag %>" alt="" />
+    <div class="main-info">
+      <h3>Country: <%= country.name %></h3>
+      <h3>Capital: <%= country.capital %></h3>
+    </div>
+    <div class="list__items">
+      <ul class="ul__main">
         <li>
           Top Level Domain: <%= country.topLevelDomain %>
         </li>
@@ -27,8 +39,16 @@
         <li>Subregion: <%= country.subregion %></li>
         <li>Population: <%= country.population %></li>
         <li>Timezone: <%= country.timezones %></li>
-        <li><img src="<%= country.flag %>" alt="" /></li>
+        <li>Language: <%= language %></li>
+        <li>
+          Currency:
+          <ul>
+            <li><%= code %></li>
+            <li><%= name %></li>
+            <li><%= symbol %></li>
+          </ul>
+        </li>
       </ul>
-    </form>
+    </div>
   </body>
 </html>
